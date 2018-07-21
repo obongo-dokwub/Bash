@@ -1,0 +1,4 @@
+#!/bin/sh
+#png jpg ...
+IMAGE_TYPE="$1"
+defaults write com.apple.screecapture type $IMAGE_TYPE;killall SystemUIServer

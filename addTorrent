@@ -1,0 +1,10 @@
+#!/bin/sh
+
+while getopts f: option
+do
+case "${option}"
+in
+f) LOCALFILE=${OPTARG};;
+esac
+done
+scp -P portNumber -i id_rsa $LOCALFILE username@address:/media/seedbox/_torrents

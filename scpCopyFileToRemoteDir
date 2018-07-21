@@ -1,0 +1,11 @@
+#!/bin/sh
+
+while getopts f:rd: option
+do
+case "${option}"
+in
+f) LOCALFILE=${OPTARG};;
+rd) REMOTEFOLDER=${OPTARG};;
+esac
+done
+scp -P portnumber -i id_rsa $LOCALFILE username@remoteAddress:"$REMOTEFOLDER"
